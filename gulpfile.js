@@ -23,3 +23,10 @@ gulp.task('images', function() {
 		.pipe(imagemin({ optimizationLevel: 5 }))
 		.pipe(gulp.dest(out));
 });
+
+gulp.task('watch', function() {
+// image changes
+	gulp.watch(folder.src + 'images/**/*', ['images']);
+});
+
+gulp.task('default', ['watch']);
